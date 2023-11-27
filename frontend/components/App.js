@@ -11,7 +11,6 @@ function App() {
     const fetchPhoto = () => {
       axios.get(BASE_URL)
         .then(res => {
-          console.log(res.data)
           setApod(res.data)
         })
         .catch(err => console.log(err.message))

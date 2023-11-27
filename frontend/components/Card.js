@@ -1,11 +1,31 @@
 import React from 'react'
 import Figure from './Figure'
+import styled from 'styled-components'
+
+const StyledCard = styled.div`
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 2rem;
+  
+  h2 {
+    color: ${pr => pr.$color};
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  p {
+    margin: 0 0 1rem 0;
+
+    &::first-line {
+      font-size: 1.35rem;
+    }
+  }
+`
 
 export default function Card({ title, imageURL, date, text }) {
     return (
-    <div className='card'>
-      <Figure imageURL={imageURL} date={date} />
+    <StyledCard $color='blue' className='card'>
       <h2>{title}</h2>
       <p>{text}</p>
-  </div>)
+      <Figure imageURL={imageURL} date={date} />
+    </StyledCard>)
   }
